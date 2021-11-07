@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+plt.rcParams['figure.figsize']=8,4
+import warnings
+warnings.filterwarnings('ignore')
+datacal = pd.read_csv('C://Users//hamed//Desktop//Python Course//Capstone//cdph_ssi_adult_odp_2020h1.csv')
+datacal.columns # to get the column data
+vis2=sns.boxplot(data=datacal,x="Operative_Procedure", y='Infections_Reported') #box plot for infections vs procedure
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x="County", y="Infections_Reported", data=datacal) # bar plot for infections reported in each county
